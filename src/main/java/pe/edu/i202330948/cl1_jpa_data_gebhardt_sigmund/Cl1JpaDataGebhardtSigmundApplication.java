@@ -24,30 +24,30 @@ public class Cl1JpaDataGebhardtSigmundApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// intentar encontrar el país "ARG" (Argentina)
-		Optional<Country> optionalCountry = countryRepository.findById("ARG");
-
-		optionalCountry.ifPresentOrElse(
-				country -> {
-					// si se encuentra "ARG", imprimir los lenguajes
-					System.out.println("Lenguajes en ARG:");
-					country.getCountryLanguage().forEach(language -> System.out.println(language.getLanguage()));
-				},
-				() -> {
-					// Si no se encuentra "ARG", intentar con "PER" (Perú)
-					Optional<Country> optionalPeru = countryRepository.findById("PER");
-					optionalPeru.ifPresentOrElse(
-							peru -> {
-								// si se encuentra "PER", imprimir los lenguajes
-								System.out.println("Lenguajes en PER:");
-								peru.getCountryLanguage().forEach(language -> System.out.println(language.getLanguage()));
-							},
-							() -> {
-								// si no se encuentra ni "ARG" ni "PER"
-								System.out.println("No se encontró el país 'PER' ni 'ARG'.");
-							}
-					);
-				}
-		);
+//		Optional<Country> optionalCountry = countryRepository.findById("ARG");
+//
+//		optionalCountry.ifPresentOrElse(
+//				country -> {
+//					// si se encuentra "ARG", imprimir los lenguajes
+//					System.out.println("Lenguajes en ARG:");
+//					country.getCountryLanguage().forEach(language -> System.out.println(language.getLanguage()));
+//				},
+//				() -> {
+//					// Si no se encuentra "ARG", intentar con "PER" (Perú)
+//					Optional<Country> optionalPeru = countryRepository.findById("PER");
+//					optionalPeru.ifPresentOrElse(
+//							peru -> {
+//								// si se encuentra "PER", imprimir los lenguajes
+//								System.out.println("Lenguajes en PER:");
+//								peru.getCountryLanguage().forEach(language -> System.out.println(language.getLanguage()));
+//							},
+//							() -> {
+//								// si no se encuentra ni "ARG" ni "PER"
+//								System.out.println("No se encontró el país 'PER' ni 'ARG'.");
+//							}
+//					);
+//				}
+//		);
 
 		// IDs de los países que se eliminarán
 //		List<String> lista = List.of("COL","ARG");
