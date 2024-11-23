@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import pe.edu.i202330948.cl1_jpa_data_gebhardt_sigmund.entity.Country;
 import pe.edu.i202330948.cl1_jpa_data_gebhardt_sigmund.repository.CountryRepository;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class Cl1JpaDataGebhardtSigmundApplication implements CommandLineRunner {
