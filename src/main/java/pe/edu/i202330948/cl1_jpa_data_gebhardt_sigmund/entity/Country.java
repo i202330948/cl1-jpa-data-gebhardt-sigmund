@@ -1,9 +1,6 @@
 package pe.edu.i202330948.cl1_jpa_data_gebhardt_sigmund.entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
@@ -25,7 +22,7 @@ public class Country {
     private Integer indepYear;
     private Integer population;
     private Double lifeExpectancy;
-    private Double GNP;
+    private Double  GNP;
     private Double GNPOld;
     private String localName;
     private String governmentForm;
@@ -33,10 +30,10 @@ public class Country {
     private Integer capital;
     private String code2;
 
-    @OneToMany(mappedBy = "country", cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, orphanRemoval = true)
+    @OneToMany(mappedBy = "country", fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, orphanRemoval = true)
     private List<City> city;
 
-    @OneToMany(mappedBy = "country", cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, orphanRemoval = true)
+    @OneToMany(mappedBy = "country", fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.PERSIST}, orphanRemoval = true)
     private List<CountryLanguage> countryLanguage;
 
 }

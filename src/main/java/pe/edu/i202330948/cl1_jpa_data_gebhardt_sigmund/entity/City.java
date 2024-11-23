@@ -3,6 +3,7 @@ package pe.edu.i202330948.cl1_jpa_data_gebhardt_sigmund.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+
 @Entity
 @Setter
 @Getter
